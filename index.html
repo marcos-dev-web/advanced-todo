@@ -31,17 +31,25 @@
           <h1 class="title">Create new reminder</h1>
         </div>
         <div class="form">
-          <input type="text" class="input" id="name" placeholder="Name.." spellcheck="false" tabindex="1" autocomplete="off"/>
+          <input type="text" class="input" id="title" placeholder="Title.." spellcheck="false" tabindex="1" autocomplete="off"/>
           <textarea class="input" id="text" placeholder="Text..." spellcheck="true" tabindex="2" autocomplete="off"></textarea>
         </div>
       </section>
       <aside class="view" id="preview">
-        <h1>preview</h1>
+        <span class="placeholder">
+          Preview
+        </span>
+        <!-- <div class="item_selected">
+          <h2 class="title_item_selected">My item has selected</h2>
+          <p class="text_item_selected">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis praesentium non, itaque ducimus sed voluptate. Ipsam, officia? Harum, sunt consequuntur nisi autem impedit corporis asperiores perspiciatis distinctio id ducimus consectetur!
+          </p>
+        </div> -->
       </aside>
       <section class="controlers">
         <div class="buttons">
-          <button class="button cancel disabled">Cancel</button>
-          <button class="button save disabled">Save</button>
+          <button class="button cancel disabled" id="cancel">Cancel</button>
+          <button class="button save disabled" id="done">Save</button>
         </div>
       </section>
     </div>
