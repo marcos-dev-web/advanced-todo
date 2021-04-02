@@ -2,8 +2,13 @@ import menu from './menu.js';
 import listItems from './list.js';
 import Search from './Search.js';
 import HandleNewItems from './HandleNewItems.js';
+import HandlePreview from './HandlePreview.js';
 
-const listView = new Search('search', 'allItems', listItems);
+const preview = new HandlePreview(
+  document.getElementById('container_preview'),
+)
+
+const listView = new Search('search', listItems, preview.update);
 listView.update();
 
 new HandleNewItems({

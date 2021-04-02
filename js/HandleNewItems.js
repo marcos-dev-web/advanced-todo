@@ -24,7 +24,6 @@ class HandleNewItems extends HandleItemsFromLocalStorage {
     this.buttonCancel.onclick = this.cancel;
 
     this.state = {
-      id: 0,
       title: {
         length: 0,
         value: '',
@@ -47,7 +46,8 @@ class HandleNewItems extends HandleItemsFromLocalStorage {
   }
 
   toggleDisabledButton() {
-    if (this.state.title.length > 0 || this.state.text.length > 0 && (!this.state.buttons["cancel"].disabled || !this.state.butons["done"].disabled)) {
+    if (this.state.title.length > 0 || this.state.text.length > 0) {
+      
       this.state.buttons["cancel"].disabled = false;
       this.state.buttons["done"].disabled = false;
 
@@ -106,10 +106,9 @@ class HandleNewItems extends HandleItemsFromLocalStorage {
       this.addNewItemToLocalStorage({
         title: this.state.title.value,
         text: this.state.text.value,
-        id: this.state.id,
+        id: new Date().getTime(),
       })
 
-      this.state.id++;
       this.resetFields();
       this.toggleDisabledButton();
       this.updateList();

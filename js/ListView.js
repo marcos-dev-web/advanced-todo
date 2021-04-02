@@ -1,7 +1,8 @@
 class ListView {
-  constructor(listViewID, listItems) {
-    this.view = document.getElementById(listViewID);
+  constructor(listItems, previewUpdate) {
+    this.view = document.getElementById('allItems');
     this.list = listItems;
+    this.previewUpdate = previewUpdate;
 
     this.update = this.update.bind(this);
   }
@@ -22,10 +23,12 @@ class ListView {
       return container;
     }
     
-    this.list().forEach(({title}) => {
+    this.list().forEach(({title, text, id}) => {
       title = title.toLowerCase().trim();
       if (condition(title)) {
         const element = createItem(title);
+
+        element.addEventListener('click', this.previewUpdate.bind(this, {title, text, id}));
 
         this.view.appendChild(element);
       }

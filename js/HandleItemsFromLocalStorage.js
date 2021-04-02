@@ -3,10 +3,13 @@ const KEY_ITEMS = 'list-items'
 class HandleItemsFromLocalStorage {
   constructor() {
     this.items = [];
+
+    this.addNewItemToLocalStorage = this.addNewItemToLocalStorage.bind(this);
+    this.removeItemFromLocalStorage = this.removeItemFromLocalStorage.bind(this);
   }
 
   get getFromLocalStorage() {
-    const items = localStorage.getItem(KEY_ITEMS) || [];
+    const items = localStorage.getItem(KEY_ITEMS) || "\[\]";
     this.items = JSON.parse(items);
 
     return this.items;
@@ -16,6 +19,7 @@ class HandleItemsFromLocalStorage {
     const newListItems = JSON.stringify([...this.getFromLocalStorage, item]);
     try {
       localStorage.setItem(KEY_ITEMS, newListItems);
+      this.items = JSON.parse(newListItems);
       return true;
     } catch(e) {
       return false;
@@ -23,13 +27,14 @@ class HandleItemsFromLocalStorage {
   }
 
   removeItemFromLocalStorage(ID) {
-    function updateLocalStorage(list) {
+    const updateLocalStorage = (list) => {
       localStorage.setItem(KEY_ITEMS, JSON.stringify(list));
+      this.items = list;
     }
 
-    const items = this.getFromLocalStorage();
-    this.items = items.filter((item) => item["id"] !== String(ID));
-    updateLocalStorage(this.items);
+    let newItems = this.getFromLocalStorage.filter((item) => String(item["id"]) !== String(ID));
+
+    updateLocalStorage(newItems);
   }
 }
 

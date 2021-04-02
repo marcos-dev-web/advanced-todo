@@ -1,8 +1,8 @@
 import ListView from './ListView.js';
 
 class Search extends ListView {
-  constructor(inputSearch, listView, listItems) {
-    super(listView, listItems);
+  constructor(inputSearch, listItems, previewUpdate) {
+    super(listItems, previewUpdate);
     this.input = document.getElementById(inputSearch);
     this.input.onkeypress = this.handleKeyDown;
     this.input.onkeydown = this.handleKeyDown;
