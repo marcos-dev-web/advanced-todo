@@ -1,0 +1,20 @@
+:root {
+  --background-primary: rgb(26, 25, 36);
+  --background-secondary: rgb(23, 22, 29);
+  --background-item: rgba(255, 255, 255, 0.315);
+  --clicked-background-item: rgb(30, 36, 65);
+
+  --color: rgb(40,44,52);
+  
+  --border-panels: 2px solid rgb(36, 30, 41);
+  --border-outline: dodgerblue;
+  
+  --green-done: rgb(30, 190, 30);
+  --disabled-green-done: rgba(41, 211, 41, 0.541);
+  --clicked-green-done: rgb(41, 228, 41);
+  
+  --red-cancel: rgb(218, 58, 58);
+  --disabled-red-cancel: rgba(253, 103, 103, 0.5);
+  --clicked-red-cancel: rgb(219, 37, 37);
+
+}

@@ -1,0 +1,36 @@
+
+.view {
+  min-width: 15rem;
+
+  grid-column-start: 4;
+  grid-column-end: 5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-left: var(--border-panels);
+  
+  background: var(--background-primary);
+}
+
+.view.previewOpen {
+  right: 0;
+}
+
+@media screen and (max-width: 850px) {
+  
+  .view {
+    position: absolute;
+    top: 0;
+    right: -100vw;
+    height: 100%;
+    min-width: 90vw;
+    z-index: 200;
+  }
+
+  #menuPreview {
+    display: block;
+  }
+}

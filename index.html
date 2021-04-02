@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Query</title>
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/middle.css" />
+    <link rel="stylesheet" href="./css/preview.css" />
+    <link rel="stylesheet" href="./css/items.css" />
+    <link rel="stylesheet" href="./css/controlers.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="menu" id="menuItems">
+        <div class="ball"></div>
+      </nav>
+      <nav class="menu" id="menuPreview">
+        <div class="ball"></div>
+      </nav>
+      <aside class="items" id="listView">
+        <div id="allItems"></div>
+        <div class="container_search">
+          <input type="search" id="search" class="input" placeholder="search...">        
+        </div>
+      </aside>
+      <section class="middle">
+        <div class="title_action">
+          <h1 class="title">Create new reminder</h1>
+        </div>
+        <div class="form">
+          <input type="text" class="input" id="name" placeholder="Name.." spellcheck="false" tabindex="1" autocomplete="off"/>
+          <textarea class="input" id="text" placeholder="Text..." spellcheck="true" tabindex="2" autocomplete="off"></textarea>
+        </div>
+      </section>
+      <aside class="view" id="preview">
+        <h1>preview</h1>
+      </aside>
+      <section class="controlers">
+        <div class="buttons">
+          <button class="button cancel disabled">Cancel</button>
+          <button class="button save disabled">Save</button>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
