@@ -71,6 +71,9 @@
 .container_search {
   width: 100%;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 650px) {
