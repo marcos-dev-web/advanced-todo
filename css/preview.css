@@ -26,6 +26,7 @@
 
 .view.previewOpen {
   right: 0;
+  width: 95vw;
 }
 
 .container_preview .item_selected {
@@ -90,9 +91,8 @@
   .view {
     position: absolute;
     top: 0;
-    right: -100vw;
+    right: -100vmax;
     height: 100%;
-    min-width: 90vw;
     z-index: 200;
   }
 

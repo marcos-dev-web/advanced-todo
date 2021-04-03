@@ -63,7 +63,7 @@ class HandlePreview extends HandleItemsFromLocalStorage {
     this.preview.appendChild(template);
 
     const reset = (e) => {
-      const acceptClasses = ['item', 'view', 'item_selected', 'title_item_selected', 'text_item_selected', 'container_preview']
+      const acceptClasses = ['item', 'view', 'item_selected', 'title_item_selected', 'text_item_selected', 'container_preview', 'ball', 'menu']
       if (!acceptClasses.some(cls => e.target.classList.contains(cls))) {
         this.resetPreview();
       }

@@ -56,7 +56,7 @@
     <script type="module" src="./js/main.js"></script>
     <script>
       function resetSelectedItems(e) {
-        const acceptClasses = ['selected-item', 'item', 'view', 'item_selected', 'title_item_selected', 'text_item_selected', 'container_preview']
+        const acceptClasses = ['selected-item', 'item', 'view', 'item_selected', 'title_item_selected', 'text_item_selected', 'container_preview', 'menu', 'ball']
         if (!acceptClasses.some(cls => e.target.classList.contains(cls))) {
           const elements = [...document.getElementsByClassName('selected-item')];
           elements.forEach(item => {

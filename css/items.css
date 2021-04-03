@@ -27,6 +27,7 @@
 
 .items.itemsOpen {
   left: 0;
+  width: 95vw;
 }
 
 .item {
@@ -83,7 +84,7 @@
 
   .items {
     position: absolute;
-    left: -100vw;
+    left: -100vmax;
     top: 0;
     z-index: 200;
     padding-top: 3rem;
