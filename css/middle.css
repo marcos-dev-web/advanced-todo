@@ -62,8 +62,6 @@
   resize: vertical;
   max-height: 300px;
   min-height: 36px;
-
-  border-radius: 2px;
 }
 
 .input:focus {

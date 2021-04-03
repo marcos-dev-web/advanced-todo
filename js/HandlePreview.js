@@ -50,15 +50,27 @@ class HandlePreview extends HandleItemsFromLocalStorage {
       container.appendChild(h2);
       container.appendChild(p);
 
+
+
       return container;
     }
+
     this.id = String(id);
 
     const template = createTemplate();
 
-
     this.preview.innerHTML = "";
     this.preview.appendChild(template);
+
+    const reset = (e) => {
+      const acceptClasses = ['item', 'view', 'item_selected', 'title_item_selected', 'text_item_selected', 'container_preview']
+      if (!acceptClasses.some(cls => e.target.classList.contains(cls))) {
+        this.resetPreview();
+      }
+    }
+
+    window.removeEventListener('click', reset);
+    window.addEventListener('click', reset);
   }
 }
 

@@ -2,7 +2,7 @@
   --background-primary: rgb(26, 25, 36);
   --background-secondary: rgb(23, 22, 29);
   --background-item: rgba(255, 255, 255, 0.315);
-  --clicked-background-item: rgb(30, 36, 65);
+  --clicked-background-item: rgb(72, 81, 129);
 
   --color: rgb(40,44,52);
   
@@ -17,4 +17,5 @@
   --disabled-red-cancel: rgba(253, 103, 103, 0.5);
   --clicked-red-cancel: rgb(219, 37, 37);
 
+  --focus-tabindex: rgb(230, 230, 46);
 }

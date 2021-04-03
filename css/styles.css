@@ -96,3 +96,7 @@ body {
 
   overflow: hidden !important;
 }
+
+.item.selected-item {
+  background-color: rgba(0, 162, 255, 0.815);
+}

@@ -23,7 +23,7 @@
       <aside class="items" id="listView">
         <div id="allItems"></div>
         <div class="container_search">
-          <input type="search" id="search" class="input" placeholder="search...">        
+          <input type="search" id="search" class="input" placeholder="search" tabindex="5"/>
         </div>
       </aside>
       <section class="middle">
@@ -39,18 +39,33 @@
         <span class="placeholder">
           Preview
         </span>
-        <button class="delete" id="delete">Delete</button>
+        <div class="options">
+          <button class="delete" id="delete" tabindex="7">Delete</button>
+        </div>
         <div class="container_preview" id="container_preview">
           
         </div>
       </aside>
       <section class="controlers">
         <div class="buttons">
-          <button class="button cancel disabled" id="cancel">Cancel</button>
-          <button class="button save disabled" id="done">Save</button>
+          <button class="button cancel disabled" id="cancel" tabindex="4">Cancel</button>
+          <button class="button save disabled" id="done" tabindex="3">Save</button>
         </div>
       </section>
     </div>
     <script type="module" src="./js/main.js"></script>
+    <script>
+      function resetSelectedItems(e) {
+        const acceptClasses = ['selected-item', 'item', 'view', 'item_selected', 'title_item_selected', 'text_item_selected', 'container_preview']
+        if (!acceptClasses.some(cls => e.target.classList.contains(cls))) {
+          const elements = [...document.getElementsByClassName('selected-item')];
+          elements.forEach(item => {
+            item.classList.remove('selected-item');
+          })
+        }
+      }
+
+      window.addEventListener('click', resetSelectedItems);
+    </script>
   </body>
 </html>

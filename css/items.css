@@ -37,6 +37,8 @@
   text-align: center;
 
   border-radius: 2px;
+  border: 2px solid transparent;
+  outline: none;
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
@@ -51,13 +53,18 @@
   margin-top: 10px;
 }
 
-.item:active {
+.item:hover {
   background: var(--clicked-background-item);
+}
+
+.item:focus {
+  border-color: var(--focus-tabindex);
 }
 
 .item .title {
   max-width: 100%;
   font-weight: 500;
+  pointer-events: none;
 }
 
 .container_search {

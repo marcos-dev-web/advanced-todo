@@ -7,6 +7,18 @@ class ListView {
     this.update = this.update.bind(this);
   }
 
+  selectItem(configs) {
+    const selectedItems = [...document.getElementsByClassName('selected-item')];
+    selectedItems.forEach(itemSelected => {
+      itemSelected.classList.remove('selected-item');
+    });
+    configs.element.classList.add('selected-item');
+
+    const {title, text, id} = configs;
+
+    this.previewUpdate({title, text, id})
+  }
+
   update(condition=() => true) {
     this.view.innerHTML = "";
 
@@ -23,12 +35,13 @@ class ListView {
       return container;
     }
     
-    this.list().forEach(({title, text, id}) => {
+    this.list().forEach(({title, text, id}, index) => {
       title = title.toLowerCase().trim();
       if (condition(title)) {
         const element = createItem(title);
 
-        element.addEventListener('click', this.previewUpdate.bind(this, {title, text, id}));
+        element.tabIndex = 6 + (index+1);
+        element.addEventListener('click', this.selectItem.bind(this, {title, text, id, element}));
 
         this.view.appendChild(element);
       }
