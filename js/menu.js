@@ -19,7 +19,7 @@ class MenuPreview {
       preview: {
         open: false,
       },
-	  zIndex: 201,
+			zIndex: 201,
     }
 
 	window.onresize = (e) => {
@@ -40,7 +40,7 @@ class MenuPreview {
   toggleOpenViews = (element, classToOpen, stateElement) => {
     stateElement.open = !stateElement.open;
     element.classList.toggle(classToOpen, stateElement.open);
-	element.style.zIndex = ++this.state.zIndex;
+		element.style.zIndex = ++this.state.zIndex;
   }
 
   setZIndex(element) {
@@ -48,20 +48,20 @@ class MenuPreview {
   }
 
   config = () => {
-	this.itemsBox.addEventListener('click', this.setZIndex.bind(this, (this.itemsBox)));
-	this.previewBox.addEventListener('click', this.setZIndex.bind(this, (this.previewBox)));
+		this.itemsBox.addEventListener('click', this.setZIndex.bind(this, (this.itemsBox)));
+		this.previewBox.addEventListener('click', this.setZIndex.bind(this, (this.previewBox)));
 
     this.menuItems.addEventListener('click', () => this.toggleOpenViews(
       this.itemsBox,
       this.classOpenItems,
       this.state.items,
-    ))
+    ));
 
     this.menuPreview.addEventListener('click', () => this.toggleOpenViews(
       this.previewBox,
       this.classOpenPreview,
       this.state.preview,
-    ))
+    ));
 
   }
 }

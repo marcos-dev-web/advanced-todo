@@ -46,7 +46,7 @@ class HandleNewItems extends HandleItemsFromLocalStorage {
   }
 
   toggleDisabledButton() {
-    if (this.state.title.length > 0 || this.state.text.length > 0) {
+    if (this.state.title.length > 0 && this.state.text.length > 0) {
       
       this.state.buttons["cancel"].disabled = false;
       this.state.buttons["done"].disabled = false;

@@ -50,8 +50,6 @@ class HandlePreview extends HandleItemsFromLocalStorage {
       container.appendChild(h2);
       container.appendChild(p);
 
-
-
       return container;
     }
 
@@ -59,7 +57,7 @@ class HandlePreview extends HandleItemsFromLocalStorage {
 
     const template = createTemplate();
 
-    this.preview.innerHTML = "";
+    this.preview.innerHTML = null;
     this.preview.appendChild(template);
 
     const reset = (e) => {
